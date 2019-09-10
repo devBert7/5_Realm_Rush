@@ -3,20 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
+[RequireComponent(typeof(Waypoint))] // Cube editor will find Waypoint component (script) and ensure it's attached
 public class CubeEditor : MonoBehaviour {
-	[SerializeField] [Range(1f, 20f)] float gridSize = 10f;
+	Waypoint waypoint;
 
-	TextMesh textMesh;
+	void Awake() {
+		waypoint = GetComponent<Waypoint>();
+	}
 
 	void Update() {
-		Vector3 snapPos;
 
-		snapPos.x = Mathf.Round(transform.position.x / gridSize) * gridSize;
-		snapPos.z = Mathf.Round(transform.position.z / gridSize) * gridSize;
-		transform.position = new Vector3(snapPos.x, 0f, snapPos.z);
+		SnapToGrid();
+		UpdateLabel();
+	}
 
-		string labelText = snapPos.x / gridSize + "," + snapPos.z / gridSize;
-		textMesh = GetComponentInChildren<TextMesh>();
+	void SnapToGrid() {
+		int gridSize = waypoint.GetGridSize();
+
+		transform.position = new Vector3(
+			waypoint.GetGridPos().x,
+			0f,
+			waypoint.GetGridPos().y
+		);
+	}
+
+	void UpdateLabel() {
+		int gridSize = waypoint.GetGridSize();
+		string labelText = waypoint.GetGridPos().x / gridSize + "," + waypoint.GetGridPos().y / gridSize;
+
+		TextMesh textMesh = GetComponentInChildren<TextMesh>();
 		textMesh.text = labelText;
 		this.name = "Cube " + labelText; // this.name == gameObject.name (true)
 	}
