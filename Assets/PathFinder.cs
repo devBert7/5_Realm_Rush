@@ -24,32 +24,46 @@ public class PathFinder : MonoBehaviour {
 
 	void PathFind() {
 		queue.Enqueue(startWaypoint);
-		while(queue.Count > 0) {
+		while(queue.Count > 0 && isRunning) {
 			var searchCenter = queue.Dequeue();
-			print("Searching From: " + searchCenter);
+			print("Searching From: " + searchCenter); // todo remove
+			searchCenter.isExplored = true;
 			HaltIfEnd(searchCenter);
+			ExploreNeighbors(searchCenter);
 		}
+		// todo - work out path we went down
 		print("Finished Path Finding?");
 	}
 
 	void HaltIfEnd(Waypoint searchCenter) {
 		if (searchCenter == endWaypoint) {
-			print("You have reached the end");
+			print("You have reached the end"); // todo remove
 			isRunning = false;
-		} else {
-			// Explore Neighbors
-			print("explore neighbors");
 		}
 	}
 
-	void ExploreNeighbors() {
+	void ExploreNeighbors(Waypoint from) {
+		if (!isRunning) {
+			return;
+		}
+
 		foreach(Vector2Int direction in directions) {
-			print("Exploring " + (startWaypoint.GetGridPos() + direction));
+			Vector2Int neighborCoordinates = from.GetGridPos() + direction;
+
 			try {
-				grid[startWaypoint.GetGridPos() + direction].TopCubeColor(Color.blue);
+				QueueNewNeighbors(neighborCoordinates);
 			} catch {
 				// do nothing
 			}
+		}
+	}
+
+	void QueueNewNeighbors(Vector2Int neighborCoordinates) {
+		Waypoint neighbor = grid[neighborCoordinates];
+		neighbor.TopCubeColor(Color.blue); // todo move elsewhere
+		if (!neighbor.isExplored) {
+			queue.Enqueue(neighbor);
+			print("Queueing Neighbor " + neighbor); // todo remove
 		}
 	}
 
