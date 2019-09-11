@@ -6,6 +6,7 @@ public class Waypoint : MonoBehaviour {
 	const int gridSize = 10;
 	Vector2Int gridPos;
 	public bool isExplored = false;
+	public Waypoint exploredFrom;
 
 	public int GetGridSize() {
 		return gridSize;

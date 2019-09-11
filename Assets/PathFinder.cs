@@ -7,6 +7,7 @@ public class PathFinder : MonoBehaviour {
 	[SerializeField] Waypoint startWaypoint, endWaypoint;
 	Queue<Waypoint> queue = new Queue<Waypoint>();
 	bool isRunning = true;
+	Waypoint searchCenter;
 	Vector2Int[] directions = {
 		Vector2Int.up,
 		Vector2Int.right,
@@ -25,30 +26,28 @@ public class PathFinder : MonoBehaviour {
 	void PathFind() {
 		queue.Enqueue(startWaypoint);
 		while(queue.Count > 0 && isRunning) {
-			var searchCenter = queue.Dequeue();
-			print("Searching From: " + searchCenter); // todo remove
+			searchCenter = queue.Dequeue();
 			searchCenter.isExplored = true;
-			HaltIfEnd(searchCenter);
-			ExploreNeighbors(searchCenter);
+			HaltIfEnd();
+			ExploreNeighbors();
 		}
 		// todo - work out path we went down
 		print("Finished Path Finding?");
 	}
 
-	void HaltIfEnd(Waypoint searchCenter) {
+	void HaltIfEnd() {
 		if (searchCenter == endWaypoint) {
-			print("You have reached the end"); // todo remove
 			isRunning = false;
 		}
 	}
 
-	void ExploreNeighbors(Waypoint from) {
+	void ExploreNeighbors() {
 		if (!isRunning) {
 			return;
 		}
 
 		foreach(Vector2Int direction in directions) {
-			Vector2Int neighborCoordinates = from.GetGridPos() + direction;
+			Vector2Int neighborCoordinates = searchCenter.GetGridPos() + direction;
 
 			try {
 				QueueNewNeighbors(neighborCoordinates);
@@ -60,10 +59,11 @@ public class PathFinder : MonoBehaviour {
 
 	void QueueNewNeighbors(Vector2Int neighborCoordinates) {
 		Waypoint neighbor = grid[neighborCoordinates];
-		neighbor.TopCubeColor(Color.blue); // todo move elsewhere
-		if (!neighbor.isExplored) {
+		if (neighbor.isExplored || queue.Contains(neighbor)) {
+			// Do nothing
+		} else {
 			queue.Enqueue(neighbor);
-			print("Queueing Neighbor " + neighbor); // todo remove
+			neighbor.exploredFrom = searchCenter;
 		}
 	}
 
