@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
-	[SerializeField] List<Waypoint> path;
-
-	// Start is called before the first frame update
 	void Start() {
+		PathFinder pathFinder = FindObjectOfType<PathFinder>();
+		var path = pathFinder.GetPath();  // List of Waypoints
+		StartCoroutine(WaypointTracker(path));
 	}
 
-	IEnumerator WaypointTracker() {
+	IEnumerator WaypointTracker(List<Waypoint> path) {
 		foreach (Waypoint waypoint in path) {
 			transform.position = waypoint.transform.position;
 			yield return new WaitForSeconds(1f);
