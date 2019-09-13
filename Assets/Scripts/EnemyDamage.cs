@@ -18,7 +18,6 @@ public class EnemyDamage : MonoBehaviour {
 
 	void ProcessHit() {
 		hitPoints--;
-		print("Remaining HP: " + hitPoints);
 	}
 
 	void KillEnemy() {
