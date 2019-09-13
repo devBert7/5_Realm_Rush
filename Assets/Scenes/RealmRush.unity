@@ -7557,6 +7557,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2838576604401700798, guid: 92f088b3d4eae1942913f43720a902dd,
+        type: 3}
+      propertyPath: m_Name
+      value: Body
+      objectReference: {fileID: 0}
     - target: {fileID: 2072398705991711200, guid: 92f088b3d4eae1942913f43720a902dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7612,11 +7617,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2838576604401700798, guid: 92f088b3d4eae1942913f43720a902dd,
-        type: 3}
-      propertyPath: m_Name
-      value: Body
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92f088b3d4eae1942913f43720a902dd, type: 3}
 --- !u!1 &4463697351579695734 stripped
@@ -7637,6 +7637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ce993bbca4f414f9586c4977ea1bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitPoints: 40
 --- !u!54 &4463697351579695736
 Rigidbody:
   m_ObjectHideFlags: 0
