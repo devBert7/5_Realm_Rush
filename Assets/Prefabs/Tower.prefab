@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToPan: {fileID: 3024950697035939944}
   targetEnemy: {fileID: 0}
+  attackRange: 40
+  projectile: {fileID: 4789000306139877083}
 --- !u!1001 &3023141170803962880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -257,6 +259,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198081497907137815, guid: 03b50b23c5780384784c488d269e3649,
         type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198081497907137815, guid: 03b50b23c5780384784c488d269e3649,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198081497907137815, guid: 03b50b23c5780384784c488d269e3649,
+        type: 3}
       propertyPath: CollisionModule.enabled
       value: 1
       objectReference: {fileID: 0}
@@ -270,15 +282,11 @@ PrefabInstance:
       propertyPath: CollisionModule.collisionMessages
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 198081497907137815, guid: 03b50b23c5780384784c488d269e3649,
-        type: 3}
-      propertyPath: moveWithTransform
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198081497907137815, guid: 03b50b23c5780384784c488d269e3649,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03b50b23c5780384784c488d269e3649, type: 3}
+--- !u!198 &4789000306139877083 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198081497907137815, guid: 03b50b23c5780384784c488d269e3649,
+    type: 3}
+  m_PrefabInstance: {fileID: 4668623631539061708}
+  m_PrefabAsset: {fileID: 0}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour {
-	[SerializeField] int hitPoints = 40;
+	[SerializeField] int hitPoints = 30;
 
 	// Start is called before the first frame update
 	void Start() {
