@@ -43,8 +43,8 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 75
-  m_Range: 21
-  m_SpotAngle: 56.55
+  m_Range: 24.7
+  m_SpotAngle: 34.35
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ce993bbca4f414f9586c4977ea1bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 30
+  hitPoints: 27
 --- !u!1001 &2837630534144302736
 PrefabInstance:
   m_ObjectHideFlags: 0
