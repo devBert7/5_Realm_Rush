@@ -8,7 +8,6 @@ public class Waypoint : MonoBehaviour {
 	public bool isExplored = false;
 	public Waypoint exploredFrom;
 	public bool placeable = true;
-	[SerializeField] GameObject tower;
 
 	public int GetGridSize() {
 		return gridSize;
@@ -23,8 +22,7 @@ public class Waypoint : MonoBehaviour {
 
 	void OnMouseOver() {
 		if (Input.GetMouseButtonDown(0) && placeable) {
-			Instantiate(tower, transform.position, Quaternion.identity);
-			placeable = false;
+			FindObjectOfType<TowerFactory>().SpawnTower(this);
 		}
 	}
 }
