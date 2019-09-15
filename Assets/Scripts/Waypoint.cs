@@ -7,6 +7,7 @@ public class Waypoint : MonoBehaviour {
 	Vector2Int gridPos;
 	public bool isExplored = false;
 	public Waypoint exploredFrom;
+	public bool placeable = true;
 
 	public int GetGridSize() {
 		return gridSize;
@@ -20,7 +21,8 @@ public class Waypoint : MonoBehaviour {
 	}
 
 	void OnMouseOver() {
-		Debug.Log("Mouse is over Cube " + gameObject.name);
-		print("Mouse Over Event " + gameObject.name);
+		if (Input.GetMouseButtonDown(0) && placeable) {
+			print("Clicked Cube " + gameObject.name);
+		}
 	}
 }
