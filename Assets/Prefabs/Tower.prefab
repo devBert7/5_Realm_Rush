@@ -186,6 +186,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullets
       objectReference: {fileID: 0}
+    - target: {fileID: 198081497907137815, guid: 03b50b23c5780384784c488d269e3649,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198081497907137815, guid: 03b50b23c5780384784c488d269e3649,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198081497907137815, guid: 03b50b23c5780384784c488d269e3649,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198081497907137815, guid: 03b50b23c5780384784c488d269e3649,
+        type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198081497907137815, guid: 03b50b23c5780384784c488d269e3649,
+        type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198081497907137815, guid: 03b50b23c5780384784c488d269e3649,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1100015588217550684, guid: 03b50b23c5780384784c488d269e3649,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -255,31 +285,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 198081497907137815, guid: 03b50b23c5780384784c488d269e3649,
-        type: 3}
-      propertyPath: moveWithTransform
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198081497907137815, guid: 03b50b23c5780384784c488d269e3649,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 198081497907137815, guid: 03b50b23c5780384784c488d269e3649,
-        type: 3}
-      propertyPath: CollisionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198081497907137815, guid: 03b50b23c5780384784c488d269e3649,
-        type: 3}
-      propertyPath: CollisionModule.type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198081497907137815, guid: 03b50b23c5780384784c488d269e3649,
-        type: 3}
-      propertyPath: CollisionModule.collisionMessages
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03b50b23c5780384784c488d269e3649, type: 3}

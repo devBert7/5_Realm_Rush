@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour {
 	[SerializeField] int hitPoints = 27;
+	[SerializeField] ParticleSystem hitParticles;
+	[SerializeField] ParticleSystem deathParticles;
 
 	// Start is called before the first frame update
 	void Start() {
@@ -18,9 +20,12 @@ public class EnemyDamage : MonoBehaviour {
 
 	void ProcessHit() {
 		hitPoints--;
+		hitParticles.Play();
 	}
 
 	void KillEnemy() {
+		var dfx = Instantiate(deathParticles, transform.position, Quaternion.identity);
+		dfx.Play();
 		Destroy(gameObject);
 	}
 }
