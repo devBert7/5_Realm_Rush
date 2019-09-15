@@ -19,8 +19,8 @@ public class Waypoint : MonoBehaviour {
 		);
 	}
 
-	public void TopCubeColor(Color color) {
-		MeshRenderer topMeshQuad = transform.Find("Top").GetComponent<MeshRenderer>();
-		topMeshQuad.material.color = color;
+	void OnMouseOver() {
+		Debug.Log("Mouse is over Cube " + gameObject.name);
+		print("Mouse Over Event " + gameObject.name);
 	}
 }
