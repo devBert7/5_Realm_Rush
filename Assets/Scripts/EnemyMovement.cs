@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
-	[SerializeField] float movementPeriod = 1f;
+	[SerializeField] float movementPeriod = .5f;
+	[SerializeField] ParticleSystem explode;
 
 	void Start() {
 		PathFinder pathFinder = FindObjectOfType<PathFinder>();
@@ -16,5 +17,12 @@ public class EnemyMovement : MonoBehaviour {
 			transform.position = waypoint.transform.position;
 			yield return new WaitForSeconds(movementPeriod);
 		}
+		SelfDestruct();
+	}
+
+	void SelfDestruct() {
+		var explosion = Instantiate(explode, transform.position, Quaternion.identity);
+		explosion.Play();
+		Destroy(gameObject);
 	}
 }
