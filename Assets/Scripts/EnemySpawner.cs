@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour {
 	[SerializeField] EnemyMovement enemy;
 	[SerializeField] Transform parent;
 	[SerializeField] Text enemyText;
+	[SerializeField] AudioClip enemySpawnSFX;
 	int numEnemies;
 
 	void Start() {
@@ -17,11 +18,16 @@ public class EnemySpawner : MonoBehaviour {
 
 	IEnumerator SpawnEnemies() {
 		while (true) {
-			numEnemies++;
-			enemyText.text = numEnemies.ToString();
+			AddScore();
+			GetComponent<AudioSource>().PlayOneShot(enemySpawnSFX);
 			var enemyClone = Instantiate(enemy, transform.position, Quaternion.identity);
 			enemyClone.transform.parent = parent;
 			yield return new WaitForSeconds(secondsBetweenSpawns);
 		}
+	}
+
+	void AddScore() {
+		numEnemies++;
+		enemyText.text = numEnemies.ToString();
 	}
 }

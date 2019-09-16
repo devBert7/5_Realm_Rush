@@ -132,7 +132,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6354681799047410792}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -246,7 +246,6 @@ MonoBehaviour:
   isExplored: 0
   exploredFrom: {fileID: 0}
   placeable: 1
-  tower: {fileID: 203939928457314782, guid: 1a8dbafa74602804485b484f01475081, type: 3}
 --- !u!65 &5965635816893596692
 BoxCollider:
   m_ObjectHideFlags: 0
