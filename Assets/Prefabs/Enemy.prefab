@@ -4710,6 +4710,7 @@ GameObject:
   - component: {fileID: 54660159372924652}
   - component: {fileID: 114941686308246830}
   - component: {fileID: 114078703179129330}
+  - component: {fileID: 65322235900638226}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -4780,6 +4781,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementPeriod: 0.5
   explode: {fileID: 198537984209914932, guid: 2b9ebf5dc5addca4e9af339433bd9cae, type: 3}
+--- !u!65 &65322235900638226
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289942997295908}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1369682648537020
 GameObject:
   m_ObjectHideFlags: 0
