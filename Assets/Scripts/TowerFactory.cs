@@ -3,24 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TowerFactory : MonoBehaviour {
-	[SerializeField] GameObject tower;
+	[SerializeField] Tower tower;
 	[SerializeField] int towerLimit = 10;
 
+	Queue<Tower> towerQueue = new Queue<Tower>(); 
+
 	public void SpawnTower(Waypoint baseWaypoint) {
-		if (FindObjectsOfType<Tower>().Length < towerLimit) {
-			InstantiateTower();
+		if (towerQueue.Count < towerLimit) {
+			InstantiateTower(baseWaypoint);
 		} else {
-			MoveExistingTower();
+			MoveExistingTower(baseWaypoint);
 		}
 	}
 
-	void InstantiateTower() {
-		Instantiate(tower, baseWaypoint.transform.position, Quaternion.identity);
+	void InstantiateTower(Waypoint baseWaypoint) {
+		var newTower = Instantiate(tower, baseWaypoint.transform.position, Quaternion.identity);
+
 		baseWaypoint.placeable = false;
+		newTower.baseWaypoint = baseWaypoint;
+
+		towerQueue.Enqueue(newTower);
 	}
 
-	void MoveExistingTower() {
+	void MoveExistingTower(Waypoint newBaseWaypoint) {
 		print("Can't place more");
-		print(FindObjectsOfType<Tower>().Length);
+
+		var oldTower = towerQueue.Dequeue();
+
+		oldTower.baseWaypoint.placeable = true;
+		newBaseWaypoint.placeable = false;
+		oldTower.baseWaypoint = newBaseWaypoint;
+
+		oldTower.transform.position = newBaseWaypoint.transform.position;
+		
+		towerQueue.Enqueue(oldTower);
 	}
 }
