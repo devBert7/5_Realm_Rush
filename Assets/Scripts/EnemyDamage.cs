@@ -7,10 +7,6 @@ public class EnemyDamage : MonoBehaviour {
 	[SerializeField] ParticleSystem hitParticles;
 	[SerializeField] ParticleSystem deathParticles;
 
-	// Start is called before the first frame update
-	void Start() {
-	}
-
 	void OnParticleCollision(GameObject other) {
 		ProcessHit();
 		if (hitPoints < 1) {
