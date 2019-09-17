@@ -31,6 +31,7 @@ public class EnemyDamage : MonoBehaviour {
 	void KillEnemy() {
 		var dfx = Instantiate(deathParticles, transform.position, Quaternion.identity);
 		dfx.Play();
+		AudioSource.PlayClipAtPoint(enemyDeathSFX, Camera.main.transform.position);
 		Destroy(gameObject);
 	}
 }
