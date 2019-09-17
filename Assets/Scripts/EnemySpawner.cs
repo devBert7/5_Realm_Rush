@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour {
-	[Range(0.1f, 30f)][SerializeField] float secondsBetweenSpawns = 5f;
+	[Range(0.1f, 30f)][SerializeField] float secondsBetweenSpawns = 3f;
 	[SerializeField] EnemyMovement enemy;
 	[SerializeField] Transform parent;
 	[SerializeField] Text enemyText;

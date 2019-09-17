@@ -4764,7 +4764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ce993bbca4f414f9586c4977ea1bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 2
+  hitPoints: 25
   hitParticles: {fileID: 7958931905846528770}
   deathParticles: {fileID: 198537984209914932, guid: 1a51bfda454239a41afb7dee687c6ac0,
     type: 3}
@@ -4782,7 +4782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bcd786c852e4e043adecfe824f21795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementPeriod: 0.5
+  movementPeriod: 0.59
   explode: {fileID: 198537984209914932, guid: 2b9ebf5dc5addca4e9af339433bd9cae, type: 3}
 --- !u!65 &65322235900638226
 BoxCollider:

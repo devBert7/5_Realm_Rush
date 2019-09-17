@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour {
-	[SerializeField] int health = 3;
+	[SerializeField] int health = 10;
 	[SerializeField] Text healthText;
 	[SerializeField] AudioClip breached;
 

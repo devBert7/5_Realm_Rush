@@ -296,7 +296,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0b59642b3d08fb7479d91310e0f083e1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.15
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2079,10 +2079,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4219318968960842, guid: a467c20795e0fed40b0d21d2bebe3b04, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 427643540, guid: a467c20795e0fed40b0d21d2bebe3b04, type: 3}
-      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 427643537, guid: a467c20795e0fed40b0d21d2bebe3b04, type: 3}
@@ -4712,7 +4708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b3c39f46c1b6f448fd051acf9a16b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsBetweenSpawns: 3
+  secondsBetweenSpawns: 4
   enemy: {fileID: 114078703179129330, guid: 04f81ff9814844ccfa08226f8d46a3f4, type: 3}
   parent: {fileID: 1291919989}
   enemyText: {fileID: 896656618}

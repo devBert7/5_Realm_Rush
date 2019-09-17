@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour {
-	[SerializeField] int hitPoints = 27;
+	[SerializeField] int hitPoints = 25;
 	[SerializeField] ParticleSystem hitParticles;
 	[SerializeField] ParticleSystem deathParticles;
 	[SerializeField] AudioClip enemyHitSFX;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
-	[SerializeField] float movementPeriod = .5f;
+	[SerializeField] float movementPeriod = .59f;
 	[SerializeField] ParticleSystem explode;
 
 	void Start() {
